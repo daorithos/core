@@ -272,7 +272,7 @@ export class MatKeyboardKeyComponent implements OnInit {
       return;
     }
 
-    this.inputValue = this.control.value;
+    this.inputValue = this.control ? this.control.value : this.input.nativeElement.value;
     // ^ this is used to not only get "focus", but
     // to make sure we don't have it everything -selected-
     // (it causes an issue in chrome, and having it doesn't hurt any other browser)

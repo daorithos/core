@@ -1,15 +1,15 @@
-import { animate, AnimationEvent, state, style, transition, trigger } from '@angular/animations';
-import { BasePortalOutlet, CdkPortalOutlet, ComponentPortal } from '@angular/cdk/portal';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentRef, EmbeddedViewRef, HostBinding, HostListener, NgZone, OnDestroy, ViewChild } from '@angular/core';
-import { AnimationCurves, AnimationDurations } from '@angular/material/core';
+import {animate, AnimationEvent, state, style, transition, trigger} from '@angular/animations';
+import {BasePortalOutlet, CdkPortalOutlet, ComponentPortal} from '@angular/cdk/portal';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentRef, EmbeddedViewRef, HostBinding, HostListener, NgZone, OnDestroy, ViewChild} from '@angular/core';
+import {AnimationCurves, AnimationDurations} from '@angular/material/core';
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import {Observable} from 'rxjs/Observable';
+import {Subject} from 'rxjs/Subject';
 import 'rxjs/add/operator/first';
 
-import { MatKeyboardConfig } from '../../configs/keyboard.config';
-import { KeyboardAnimationState } from '../../enums/keyboard-animation-state.enum';
-import { KeyboardAnimationTransition } from '../../enums/keyboard-animation-transition.enum';
+import {MatKeyboardConfig} from '../../configs/keyboard.config';
+import {KeyboardAnimationState} from '../../enums/keyboard-animation-state.enum';
+import {KeyboardAnimationTransition} from '../../enums/keyboard-animation-transition.enum';
 
 // TODO: we can't use constants from animation.ts here because you can't use
 // a text interpolation in anything that is analyzed statically with ngc (for AoT compile).
@@ -35,7 +35,7 @@ export const HIDE_ANIMATION = `${AnimationDurations.EXITING} ${AnimationCurves.A
   // ]
   animations: [
     trigger('state', [
-      state(`${KeyboardAnimationState.Visible}`, style({ transform: 'translateY(0%)' })),
+      state(`${KeyboardAnimationState.Visible}`, style({transform: 'translateY(0%)'})),
       transition(`${KeyboardAnimationTransition.Hide}`, animate(HIDE_ANIMATION)),
       transition(`${KeyboardAnimationTransition.Show}`, animate(SHOW_ANIMATION))
     ])
@@ -93,7 +93,7 @@ export class MatKeyboardContainerComponent extends BasePortalOutlet implements O
   /** Handle end of animations, updating the state of the keyboard. */
   @HostListener('@state.done', ['$event'])
   onAnimationEnd(event: AnimationEvent) {
-    const { fromState, toState } = event;
+    const {fromState, toState} = event;
 
     if ((toState === KeyboardAnimationState.Void && fromState !== KeyboardAnimationState.Void) || toState.startsWith('hidden')) {
       this._completeExit();
