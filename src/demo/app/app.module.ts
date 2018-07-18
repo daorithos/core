@@ -14,7 +14,7 @@ import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardMod
 
 import { AppComponent } from './app.component';
 
-const customLyouts: IKeyboardLayouts = {
+const customLayouts: IKeyboardLayouts = {
   ...keyboardLayouts,
   'Tolles Layout': {
     'name': 'Awesome layout',
@@ -51,7 +51,7 @@ const customLyouts: IKeyboardLayouts = {
     MatKeyboardModule
   ],
   providers: [
-    { provide: MAT_KEYBOARD_LAYOUTS, useValue: customLyouts }
+    { provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts }
   ],
   bootstrap: [
     AppComponent

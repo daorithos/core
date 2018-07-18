@@ -52,7 +52,7 @@ export class MatKeyboardContainerComponent extends BasePortalOutlet implements O
 
   /** The state of the keyboard animations. */
   @HostBinding('@state')
-  private _animationState: KeyboardAnimationState = KeyboardAnimationState.Void;
+  _animationState: KeyboardAnimationState = KeyboardAnimationState.Void;
 
   /** Subject for notifying that the keyboard has exited from view. */
   onExit: Subject<any> = new Subject();

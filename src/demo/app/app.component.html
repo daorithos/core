@@ -96,7 +96,7 @@
 
       <section class="row">
         <div class="col">
-          <mat-input-container>
+          <mat-form-field>
             <input
                 matInput
                 matKeyboard
@@ -106,13 +106,13 @@
                 (enterClick)="submitForm(form)"
             >
             <mat-hint>Using <code>ngModel</code> two way binding</mat-hint>
-          </mat-input-container>
+          </mat-form-field>
 
           <pre>{{ testModelValue }}</pre>
         </div>
 
         <div class="col">
-          <mat-input-container>
+          <mat-form-field>
             <input
                 #testSimpleValue
                 type="number"
@@ -124,13 +124,13 @@
                 (enterClick)="submitForm(form)"
             >
             <mat-hint>Simple <code>Element.value</code> binding</mat-hint>
-          </mat-input-container>
+          </mat-form-field>
 
           <pre>{{ testSimpleValue.value }}</pre>
         </div>
 
         <div class="col">
-          <mat-input-container>
+          <mat-form-field>
             <input
                 matInput
                 matKeyboard
@@ -140,13 +140,13 @@
                 (enterClick)="submitForm(form)"
             >
             <mat-hint>Reactive binding with <code>formControl</code></mat-hint>
-          </mat-input-container>
+          </mat-form-field>
 
           <pre>{{ testControlValue.value }}</pre>
         </div>
 
         <div class="col">
-          <mat-input-container>
+          <mat-form-field>
             <input
                 matInput
                 ngModel
@@ -157,7 +157,7 @@
                 (enterClick)="submitForm(form)"
             >
             <mat-hint><code>ngModel</code> access by template binding</mat-hint>
-          </mat-input-container>
+          </mat-form-field>
 
           <pre>{{ testModelReference.value }}</pre>
         </div>
